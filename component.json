@@ -1,0 +1,14 @@
+{
+  "name": "load",
+  "repo": "code42day/load",
+  "description": "Basic script loader",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
