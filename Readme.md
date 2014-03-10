@@ -18,10 +18,10 @@ Install with [component(1)](http://component.io):
 
 ## API
 
-````javascript
+```javascript
 var load = require('load');
 load('//topic.disqus.com/count.js');
-````
+```
 
 Please note that scripts added to the DOM are `async` by default (see this [article][1] on script
 loading) which means that they will start executing as soon as they load in pretty much random
@@ -29,9 +29,25 @@ order.
 
 You can force async to `false` but some browsers will ignore it.
 
-````javascript
+```javascript
 load('//topic.disqus.com/count.js', false);
-````
+```
+
+`load` returns [script element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement) - you can register `onerror` and `onload` callbacks
+
+```javascript
+load('//cdn/script.js').onload =  function () {
+  console.log('my script loaded');
+});
+```
+
+and:
+
+```javascript
+load('//cdn/script.js').onerror =  function (err) {
+  console.log('cannot load script', err);
+});
+```
 
 ## License
 
