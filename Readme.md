@@ -1,4 +1,3 @@
-
 # load
 
 Basic script loader.
@@ -46,6 +45,21 @@ and:
 ```javascript
 load('//cdn/script.js').onerror =  function (err) {
   console.log('cannot load script', err);
+});
+```
+
+If you your callback work with IE use [segmentio/script-onload](https://github.com/segmentio/script-onload)
+
+```javascript
+var load  = require('load');
+var onload = require('script-onload');
+
+onload(load('//cdn/script.js'), function(err) {
+  if (err) {
+    console.log('Cannot load script', err);
+  } else {
+    console.log('Script loaded');
+  }
 });
 ```
 
